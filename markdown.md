@@ -5,6 +5,7 @@ In general:
 - Be consistent with the file you found
 - Prioritize readability as plaintext over writability or rendered html
 
+
 ## Line length
 
 Hard wrap lines at 80 characters whenever possible. An obvious exception is with
@@ -13,12 +14,14 @@ limit.
 
 Rationale:
 
+
 ## Links
 
 Prefer reference-style links. Always use reference-style links when the same
 URL is used in multiple files.
 
 Rationale: Reference-style links are more readable than inline links.
+
 
 ## Headings
 
@@ -34,9 +37,11 @@ is often appropriate before second-level headings (h2).
 
 Rationale: A well-organized Markdown file is a beauty to behold.
 
+
 ## Lists
 
-Prefer single dashes for lists. Don't precede the dash with a space.
+Prefer single dashes for unordered lists. Don't precede the dash with a space,
+and include a single space after the dash.
 
 Good:
 
@@ -54,6 +59,7 @@ Bad:
 
 Rationale: Single dashes are lighter and easier on the eyes. Starting a list
 item with a space is a waste of a character.
+
 
 ### Nested Lists
 
@@ -77,7 +83,10 @@ Bad:
 
 Rationale: Two spaces is enough to show hierarchy and looks nice and clean.
 
-### Wrapping text in lists
+
+### Wrapping List Items
+
+Use hanging indents to align text when list items flow to multiple lines.
 
 Good:
 
@@ -97,16 +106,24 @@ goes to the next line.
    long and goes to the next line.
 ```
 
-Rationale: Text flows better when multiple lines are aligned.
+Rationale: Text reads better when multiple lines are aligned.
+
 
 ## Code Blocks
 
-Prefer to use four spaces for code blocks if there is only one code format in
+Prefer to use four spaces for [code blocks] if there is only one code format in
 the Markdown file. Use labeled fenced code blocks if there are multiple
 different code formats (html, js, css).
 
 Rationale: Indented code blocks are cleaner than fenced code blocks. Labeled
 code blocks are messier, but make intent clearer.
+
+Exceptions: One exception to this rule is when you have Markdown examples in a
+Markdown file. Use labeled fenced code blocks instead of indented code blocks
+in that case.
+
+[Code Blocks]: http://daringfireball.net/projects/markdown/syntax#precode
+
 
 ## Variables and Function names
 
