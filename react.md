@@ -2,7 +2,6 @@
 
 > _Originally forked from [Khan Academy's React Style Guide](https://github.com/Khan/style-guides/blob/master/style/react.md)_
 
-----
 * [Syntax](#syntax)
   * [Order your methods with lifecycle first and render last.](#order-your-methods-with-lifecycle-first-and-render-last)
   * [Name handlers handleEventName.](#name-handlers-handleeventname)
