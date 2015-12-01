@@ -6,10 +6,10 @@ reviewing code written by others.
 
 ## Style Guides
 
-* [CSS](css.md)
-* [Express](express.md)
-* [HTML(5)](html.md)
-* [JavaScript / ECMAScript 6](javascript.md)
-* [Markdown](markdown.md)
-* [Node](node.md)
-* [React](react.md)
+* [CSS](css.md) (in process)
+* [Express](express.md) (in process)
+* [HTML(5)](html.md) (in process)
+* [JavaScript / ECMAScript 6](javascript.md) (in process)
+* [Markdown](markdown.md) (in process)
+* [Node](node.md) (in process)
+* [React](react.md) (in process)
