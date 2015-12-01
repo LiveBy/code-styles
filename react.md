@@ -1,6 +1,6 @@
 ## React style guide
 
-> Originally forked from [Khan Academy's React Style Guide](https://github.com/Khan/style-guides/blob/master/style/react.md)
+> _Originally forked from [Khan Academy's React Style Guide](https://github.com/Khan/style-guides/blob/master/style/react.md)_
 
 ----
 * [Syntax](#syntax)
