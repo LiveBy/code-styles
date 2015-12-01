@@ -6,6 +6,7 @@ reviewing code written by others.
 
 ## Style Guides
 
+* [Code Collaboration](collaborating.md) (in process)
 * [CSS](css.md) (in process)
 * [Express](express.md) (in process)
 * [HTML(5)](html.md) (in process)
