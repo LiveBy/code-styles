@@ -11,7 +11,7 @@ Here is an example of a good folder structure.
      - route2.js  
      - route3/  
        - _index.js_
-       - route3_test.js
+       - _route3_test.js_
        - route4.js
        - route5.js
   - **middleware/**
