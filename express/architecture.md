@@ -164,9 +164,9 @@ module.exports = function (req, res, next) {
 Middleware folders must be able to include all middleware inside the folder, and still return a middleware function.
 
 ```Javascript
-module.exports = function(req, res, next) {
-  callFiles (filesInCurrentFolder)
-}
+var router = module.exports = express.Router()
+var files = getFilesInCurrentFolder() //array of middleware functions
+router.use( ...files )
 ```
 
 
