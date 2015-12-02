@@ -98,14 +98,14 @@ router //Creating basic route
   * Uploads files to the public folder
   */
   .post( funciton (req, res) ) { 
-    fs.save(req.file);
+    fs.save(req.body.file)
   })
   
   ...
   
-router.param('file', function(req, res, next, file) { //Put the file on the Request object
+router.param('file', function(req, res, next, file)) { //Put the file on the Request object
   req.file = fs.readFileSync(file)
-});
+})
 
 /**
 * /public/:file
@@ -119,7 +119,7 @@ router //Creating route with parameter in it
   * Gets the public file
   */
   .get( function (req, res) ) {
-    res.send(req.file);
+    res.send(req.file)
   })
   /**
   * /public/:file#post
@@ -148,15 +148,15 @@ The folder name directly relates to the route that it creates.  A folder with th
 Middleware files will always return a middleware function.
 
 ```Javascript
-module.exports = function (req, res next) {
+module.exports = function (req, res, next) {
   User
     .findById(req.params.id)
     .then( (user) => {
-        req.user = user;
-        next();  
+        req.user = user
+        next()  
     })
     .catch( (err) => {
-      next(err);
+      next(err)
     })
 }
 ```
@@ -164,7 +164,7 @@ module.exports = function (req, res next) {
 Middleware folders must be able to include all middleware inside the folder, and still return a middleware function.
 
 ```Javascript
-module.exports = function(req, res next) {
+module.exports = function(req, res, next) {
   callFiles (filesInCurrentFolder)
 }
 ```
