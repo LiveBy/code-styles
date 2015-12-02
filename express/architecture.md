@@ -77,6 +77,35 @@ Bad:
 ### Routes
 The name of a file or folder must reflex the route that it creates.  All parameter routes must store some value that is required by a route on the Request object.
 
+public.js
+```Javascript
+var router = module.exports = express.Router()
+router //Creating basic route
+  .route("/public")
+  .get( function (req, res) ) {
+    res.render("public")
+  })
+  .post( funciton (req, res) ) { 
+    fs.save(req.file);
+  })
+  
+  ...
+  
+router.param('file', function(req, res, next, file) { //Put the file on the Request object
+  req.file = fs.readFileSync(file)
+});
+
+router //Creating route with parameter in it
+  .route("/public/:file")
+  .get( function (req, res) ) {
+    res.send(req.file);
+  })
+  .post( function (req, res) ) {
+    req.file = req.body.file
+    req.file.save()
+  })
+```
+
 ### Test Files
 Tests are included in the folder that they are testing.  
 All tests prepend the name of the folder to the test file name. So a folder named _maps_ would have a test file with the name *maps_test.js*
@@ -94,14 +123,14 @@ The folder name directly relates to the route that it creates.  A folder with th
 Middleware files will always return a middleware function.
 
 ```Javascript
-module.exports = function(req, res next){
+module.exports = function (req, res next) {
   User
     .findById(req.params.id)
-    .then((user) => {
+    .then( (user) => {
         req.user = user;
         next();  
     })
-    .catch((err) => {
+    .catch( (err) => {
       next(err);
     })
 }
@@ -110,16 +139,8 @@ module.exports = function(req, res next){
 Middleware folders must be able to include all middleware inside the folder, and still return a middleware function.
 
 ```Javascript
-module.exports = function(req, res next){
-  User
-    .findById(req.params.id)
-    .then((user) => {
-        req.user = user;
-        next();  
-    })
-    .catch((err) => {
-      next(err);
-    })
+module.exports = function(req, res next) {
+  callFiles (filesInCurrentFolder)
 }
 ```
 
