@@ -75,7 +75,7 @@ Bad:
     - end.js   
 
 ### Routes
-The name of a file or folder must reflex the route that it creates.  All parameter routes must be stored on the req
+The name of a file or folder must reflex the route that it creates.  All parameter routes must store some value that is required by a route on the Request object.
 
 ### Test Files
 Tests are included in the folder that they are testing.  
@@ -84,8 +84,46 @@ All tests prepend the name of the folder to the test file name. So a folder name
 
 
 ### folders
-The folder name directly relates to the route that it creates.
+The folder name directly relates to the route that it creates.  A folder with the path _./controllers/map_ must expose the route `/map`.
+
+## Middleware Folder
+
+## Folder structure
+
+### Middleware Files
+Middleware files will always return a middleware function.
+
+```Javascript
+module.exports = function(req, res next){
+  User
+    .findById(req.params.id)
+    .then((user) => {
+        req.user = user;
+        next();  
+    })
+    .catch((err) => {
+      next(err);
+    })
+}
+```
+### Middleware folders
+Middleware folders must be able to include all middleware inside the folder, and still return a middleware function.
+
+```Javascript
+module.exports = function(req, res next){
+  User
+    .findById(req.params.id)
+    .then((user) => {
+        req.user = user;
+        next();  
+    })
+    .catch((err) => {
+      next(err);
+    })
+}
+```
+
 
 ## File naming
 File names are always lowercase. If your file has multiple words in it, use a dash between (EG: `promise-handler.js`).
-All JavaScript files must always have the extension .js.  
+All Express.js Route files must always have the extension _.js_.  
