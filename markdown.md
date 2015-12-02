@@ -164,6 +164,12 @@ Good:
 This is _pretty_ tasty.
 ```
 
+OK:
+
+```markdown
+This is *pretty_tasty*
+```
+
 Bad:
 
 ```markdown
