@@ -76,9 +76,9 @@ Good:
 Bad:
 
 ```markdown
- - level 1
-  - level 2
-     - level 3
+  - level 1
+   - level 2
+      - level 3
 ```
 
 Rationale: Two spaces is enough to show hierarchy and looks nice and clean.
@@ -112,8 +112,8 @@ Rationale: Text reads better when multiple lines are aligned.
 ## Code Blocks
 
 Prefer to use four spaces for [code blocks] if there is only one code format in
-the Markdown file. Use labeled fenced code blocks if there are multiple
-different code formats (html, js, css).
+the Markdown file. Use fenced code blocks with a language identifier if there
+are multiple languages code formats (html, js, css).
 
 Rationale: Indented code blocks are cleaner than fenced code blocks. Labeled
 code blocks are messier, but make intent clearer.
@@ -123,8 +123,53 @@ Markdown file. Use labeled fenced code blocks instead of indented code blocks
 in that case.
 
 [Code Blocks]: http://daringfireball.net/projects/markdown/syntax#precode
-
+[Fenced Code Blocks]: https://help.github.com/articles/github-flavored-markdown/#fenced-code-blocks
 
 ## Variables and Function names
 
 Use back-ticks when referring to variable or function names inside a paragraph.
+
+TODO: Examples
+
+## Bold / Strong Emphasis
+
+Use double asterisks (`**`) to bold text. Do not use double underscore.
+
+Good:
+
+```markdown
+This is **amazing**!
+```
+
+Bad:
+
+```markdown
+This is __amazing__!
+```
+
+Rationale: Double stars conveys strong emphasis better than double underscores.
+
+
+## Italics / Emphasis
+
+Prefer a single underscore (`_`) to emphasize text over a single asterisk (`*`).
+
+Some Markdown processors have issues when the emphasized content (such as file
+names) contain underscores. Feel free to use single asterisks if that is the
+case.
+
+Good:
+
+```markdown
+This is _pretty_ tasty.
+```
+
+Bad:
+
+```markdown
+This is *pretty* tasty.
+```
+
+Rationale: Underscores provide subtler emphasis than asterisks. Additionally,
+underlining text is a standard copy editing mark for italicized text, and the
+single underscore preceding and following text looks similar to an underline.
