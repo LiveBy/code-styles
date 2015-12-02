@@ -18,7 +18,7 @@ Rationale:
 ## Links
 
 Prefer reference-style links. Always use reference-style links when the same
-URL is used in multiple files.
+URL is used multiple times in the file.
 
 Rationale: Reference-style links are more readable than inline links.
 
