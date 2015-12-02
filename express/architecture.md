@@ -97,12 +97,12 @@ router //Creating basic route
   * /public#post
   * Uploads files to the public folder
   */
-  .post( funciton (req, res) ) { 
+  .post( funciton (req, res) ) {
     fs.save(req.body.file)
   })
-  
+
   ...
-  
+
 router.param('file', function(req, res, next, file)) { //Put the file on the Request object
   req.file = fs.readFileSync(file)
 })
@@ -168,6 +168,11 @@ var router = module.exports = express.Router()
 var files = getFilesInCurrentFolder() //array of middleware functions
 router.use( ...files )
 ```
+
+## Helpers Folder
+
+Do not add routers, routes, or middleware to this folder. This folder is for common functions that are needed between the other folders.
+
 
 
 ## File naming
