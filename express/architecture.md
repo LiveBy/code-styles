@@ -80,11 +80,23 @@ The name of a file or folder must reflex the route that it creates.  All paramet
 public.js
 ```Javascript
 var router = module.exports = express.Router()
+/**
+* /public
+* Gives acces to public files
+*/
 router //Creating basic route
   .route("/public")
+  /**
+  * /public#get
+  * Gets contents of public file
+  */
   .get( function (req, res) ) {
     res.render("public")
   })
+  /**
+  * /public#post
+  * Uploads files to the public folder
+  */
   .post( funciton (req, res) ) { 
     fs.save(req.file);
   })
@@ -95,11 +107,24 @@ router.param('file', function(req, res, next, file) { //Put the file on the Requ
   req.file = fs.readFileSync(file)
 });
 
+/**
+* /public/:file
+* @param: file
+* Route to control a single file in the public folder
+*/
 router //Creating route with parameter in it
   .route("/public/:file")
+  /**
+  * /public/:file#get
+  * Gets the public file
+  */
   .get( function (req, res) ) {
     res.send(req.file);
   })
+  /**
+  * /public/:file#post
+  * Updates the public file
+  */
   .post( function (req, res) ) {
     req.file = req.body.file
     req.file.save()
